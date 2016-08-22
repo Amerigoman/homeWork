@@ -1,6 +1,7 @@
 function formatDate(date, counter) {
 	var now = new Date(date);
 	now.setSeconds(date.getSeconds() + counter);
+	
 	var dd = now.getDate();
 	if(dd < 10) dd = '0' + dd;
 
