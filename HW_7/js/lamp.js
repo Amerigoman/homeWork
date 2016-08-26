@@ -7,6 +7,8 @@ var operand2;
 function bulbCondition(obj) {
 	for (var key in obj) {
 		
+		// in case when it is necessary to compare
+		// the logic elements (the case where the object has children) 
 		if (typeof obj[key] == 'object' && obj['children'] != undefined) {
 			bulbCondition(obj[key]);
 			oper = logic.pop();
@@ -47,11 +49,16 @@ function bulbCondition(obj) {
 					state.push(0);
 				}
 			}
+
+		// if the value is an object then go on to browse
 		} else if (typeof obj[key] == 'object') {
 			bulbCondition(obj[key]);
+
+		// mark the value of the gate
 		} else if (obj[key] == 'Gate') {
 			logic.push(obj['type']);
-			bulbCondition(obj[key]);
+
+		// mark the value of the switch	
 		} else if (obj[key] == 'Switch') {
 			state.push(obj['state']);
 		}
