@@ -1,0 +1,23 @@
+﻿table {
+	margin: 0 auto;
+}
+
+table {
+	border-spacing: 0;
+}
+
+table td {
+	height: 20px;
+	width: 20px;
+	border: 1px solid black;
+	text-align: center;
+}
+
+div {
+	height: 18px;
+	width: 18px;
+}
+
+.hidden {
+	visibility: hidden;
+}
